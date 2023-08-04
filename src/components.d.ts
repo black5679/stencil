@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TopbarComponent {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTopbarComponentElement extends Components.TopbarComponent, HTMLStencilElement {
+    }
+    var HTMLTopbarComponentElement: {
+        prototype: HTMLTopbarComponentElement;
+        new (): HTMLTopbarComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "topbar-component": HTMLTopbarComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TopbarComponent {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "topbar-component": TopbarComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "topbar-component": LocalJSX.TopbarComponent & JSXBase.HTMLAttributes<HTMLTopbarComponentElement>;
         }
     }
 }

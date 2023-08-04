@@ -1,0 +1,1 @@
+Mil disculpas, desconozco completamente el framework stencil

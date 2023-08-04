@@ -1,0 +1,71 @@
+
+
+.navbar-custom {
+  background: red;
+  min-height: 40px;
+  top: 0;
+  position: sticky;
+  transition: 1s;
+  z-index: 999;
+  border: $card-border-width solid transparent;
+  border-bottom: $card-border-width solid $card-border-color;
+  box-shadow: var(--#{$prefix}box-shadow);
+
+  .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0 $spacer;
+
+
+      ul {
+          list-style-type: none;
+          margin-bottom: 0;
+      }
+
+
+      li {
+          max-height: 40px;
+
+          .nav-link {
+              &.show {
+                  color: blue;
+              }
+          }
+      }
+
+      .nav-link {
+          padding: 0 $spacer * 0.75;
+          position: relative;
+          color: green;
+          display: flex;
+          align-items: center;
+          height: 40px;
+          cursor: pointer;
+
+          &:hover {
+              color: blue;
+          }
+      }
+
+      // Topbar Search from
+      .app-search {
+          form {
+
+              .form-control {
+                  color: green;
+                  background-color: white;
+
+                  &::placeholder {
+                      color: green;
+                  }
+              }
+
+              span.search-icon {
+                  color: green;
+              }
+          }
+      }
+  }
+}
